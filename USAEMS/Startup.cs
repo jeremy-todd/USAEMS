@@ -55,7 +55,7 @@ namespace USAEMS
                 services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite("Data Source = ../USAEMS.Infrastructure/usaems.db"));
 
-            //services.BuildServiceProvider().GetService<AppDbContext>().Database.Migrate();
+            services.BuildServiceProvider().GetService<AppDbContext>().Database.Migrate();
 
             //Add Identity services
             services.AddIdentity<AppUser, IdentityRole>()
@@ -128,7 +128,7 @@ namespace USAEMS
             });
 
             //create admin user if it doesn't already exist
-            //SeedAdminUser(userManager, roleManager);
+            SeedAdminUser(userManager, roleManager);
         }
 
         private void SeedAdminUser(UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager)
