@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserProfileComponent } from './Modules/Admin/user-profile/user-profile.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './Modules/Home/home.component';
 import { RegisterComponent } from './Modules/Admin/register/register.component';
 import { MyProfileComponent } from './Modules/Admin/my-profile/my-profile.component';
 import { IncidentsAdminComponent } from './Modules/IncidentReporting/incident-admin/incident-admin.component';

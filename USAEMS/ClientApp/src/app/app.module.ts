@@ -11,7 +11,7 @@ import { EventAdminComponent } from './Modules/Events/event-admin/event-admin.co
 import { HeaderComponent } from './Modules/Admin/header/header.component';
 import { FooterComponent } from './Modules/Admin/footer/footer.component';
 import { RegisterComponent } from './Modules/Admin/register/register.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './Modules/Home/home.component';
 import { MyProfileComponent } from './Modules/Admin/my-profile/my-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './Modules/Admin/login/login.component';
