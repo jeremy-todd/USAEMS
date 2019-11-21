@@ -41,6 +41,13 @@ import { SeatingNewComponent } from './Modules/SeatingGuides/seating-new/seating
 import { SeatingOpenSuitesComponent } from './Modules/SeatingGuides/seating-opensuites/seating-opensuites.component';
 import { SeatingSpecialEventsComponent } from './Modules/SeatingGuides/seating-specialevents/seating-specialevents.component';
 import { SeatingSuitesComponent } from './Modules/SeatingGuides/seating-suites/seating-suites.component';
+import { SignUpAdminComponent } from './Modules/StaffSignUp/signup-admin/signup-admin.component';
+import { SignUpEMailListComponent } from './Modules/StaffSignUp/signup-emaillist/signup-emaillist.component';
+import { SignUpManageEventsComponent } from './Modules/StaffSignUp/signup-manage/signup-manage.component';
+import { SignUpMyEventsComponent } from './Modules/StaffSignUp/signup-myevents/signup-myevents.component';
+import { SignUpPermissionsComponent } from './Modules/StaffSignUp/signup-permissions/signup-permissions.component';
+import { SignUpReviewStaffingComponent } from './Modules/StaffSignUp/signup-reviewstaffing/signup-reviewstaffing.component';
+import { SignUpSignUpComponent } from './Modules/StaffSignUp/signup-signup/signup-signup.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +80,13 @@ import { SeatingSuitesComponent } from './Modules/SeatingGuides/seating-suites/s
     ChecklistManagersComponent,
     ChecklistDistributionComponent,
     ChecklistReviewComponent,
+    SignUpAdminComponent,
+    SignUpEMailListComponent,
+    SignUpManageEventsComponent,
+    SignUpMyEventsComponent,
+    SignUpPermissionsComponent,
+    SignUpReviewStaffingComponent,
+    SignUpSignUpComponent,
     SeatingAdminComponent,
     SeatingAthleticsComponent,
     SeatingNewComponent,

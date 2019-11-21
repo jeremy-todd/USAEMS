@@ -31,20 +31,27 @@ import { SeatingSpecialEventsComponent } from './Modules/SeatingGuides/seating-s
 import { SeatingSuitesComponent } from './Modules/SeatingGuides/seating-suites/seating-suites.component';
 import { SeatingOpenSuitesComponent } from './Modules/SeatingGuides/seating-opensuites/seating-opensuites.component';
 import { SeatingNewComponent } from './Modules/SeatingGuides/seating-new/seating-new.component';
+import { SignUpAdminComponent } from './Modules/StaffSignUp/signup-admin/signup-admin.component';
+import { SignUpMyEventsComponent } from './Modules/StaffSignUp/signup-myevents/signup-myevents.component';
+import { SignUpManageEventsComponent } from './Modules/StaffSignUp/signup-manage/signup-manage.component';
+import { SignUpReviewStaffingComponent } from './Modules/StaffSignUp/signup-reviewstaffing/signup-reviewstaffing.component';
+import { SignUpPermissionsComponent } from './Modules/StaffSignUp/signup-permissions/signup-permissions.component';
+import { SignUpEMailListComponent } from './Modules/StaffSignUp/signup-emaillist/signup-emaillist.component';
+import { SignUpSignUpComponent } from './Modules/StaffSignUp/signup-signup/signup-signup.component';
 
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "home", component: HomeComponent},
-  { path: "userProfile", component: UserProfileComponent },
-  { path: "profile", component: MyProfileComponent },
-  { path: "register", component: RegisterComponent },
+  { path: "aUserProfile", component: UserProfileComponent },
+  { path: "aMyProfile", component: MyProfileComponent },
+  { path: "aRegister", component: RegisterComponent },
   { path: "incidents", component: IncidentsAdminComponent },
-  { path: "incidentDistribution", component: IncidentDistributionComponent }
-  { path: "incidentReport", component: IncidentReportComponent },
-  { path: "incidentReview", component: IncidentReviewComponent },
+  { path: "iDistribution", component: IncidentDistributionComponent },
+  { path: "iIncidentReport", component: IncidentReportComponent },
+  { path: "iReview", component: IncidentReviewComponent },
   { path: "events", component: EventAdminComponent },
-  { path: "login", component: LoginComponent },
+  { path: "aLogin", component: LoginComponent },
   { path: "gatecount", component: GateCountAdminComponent },
   { path: "gcGateCount", component: GateCountGateCountComponent },
   { path: "gcStudentCount", component: GateCountStudentCountComponent },
@@ -60,6 +67,13 @@ const routes: Routes = [
   { path: "cManagers", component: ChecklistManagersComponent },
   { path: "cDistribution", component: ChecklistDistributionComponent },
   { path: "cReview", component: ChecklistReviewComponent },
+  { path: "staffsignup", component: SignUpAdminComponent },
+  { path: "suSignUp", component: SignUpSignUpComponent },
+  { path: "suMyEvents", component: SignUpMyEventsComponent },
+  { path: "suManage", component: SignUpManageEventsComponent },
+  { path: "suReviewStaffing", component: SignUpReviewStaffingComponent },
+  { path: "suPermissions", component: SignUpPermissionsComponent },
+  { path: "suEmailList", component: SignUpEMailListComponent },
   { path: "seatingguides", component: SeatingAdminComponent },
   { path: "sgAthletics", component: SeatingAthleticsComponent },
   { path: "sgSpecialEvents", component: SeatingSpecialEventsComponent },
