@@ -26,7 +26,7 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.http
-      .post<any>("https://usaemstesting.azurewebsites.net/api/auth/login", { email: email, password: password })
+      .post<any>("localhost:5001/api/auth/login", { email: email, password: password })
       .pipe(
         map(user => {
           console.log(user);
@@ -47,7 +47,7 @@ export class AuthService {
 
   register(user: any): Observable<IUser> {
     return this.http.post<IUser>(
-      "https://usaemstesting.azurewebsites.net/api/auth/register",
+      "https://localhost:5001/api/auth/register",
       user
     );
   }

@@ -13,6 +13,35 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\Modules\EmployeeNotification\notification-admin - Copy (2)\notification-admin.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\EmployeeNotification\notification-admin\notification-admin.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\EmployeeNotification\notification-notification\notification-notification.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\GateCountReporting\gatecount-distribution\gatecount-distribution.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\GateCountReporting\gatecount-gatecount\gatecount-gatecount.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\GateCountReporting\gatecount-interval\gatecount-interval.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\GateCountReporting\gatecount-review\gatecount-review.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\GateCountReporting\gatecount-admin\gatecount-admin.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\GateCountReporting\gatecount-stats\gatecount-stats.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\GateCountReporting\gatecount-studentcount\gatecount-studentcount.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\ManagerChecklist\checklist-admin - Copy (2)\checklist-admin.ts" />
+    <None Remove="ClientApp\src\app\Modules\ManagerChecklist\checklist-admin - Copy (3)\checklist-admin.ts" />
+    <None Remove="ClientApp\src\app\Modules\ManagerChecklist\checklist-admin - Copy (4)\checklist-admin.ts" />
+    <None Remove="ClientApp\src\app\Modules\ManagerChecklist\checklist-admin\checklist-admin.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\ManagerChecklist\checklist-checklist\checklist-checklist.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\SeatingGuides\seating-admin\seating-admin.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\SeatingGuides\seating-athletics\seating-athletics.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\SeatingGuides\seating-new\seating-new.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\SeatingGuides\seating-opensuites\seating-opensuites.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\SeatingGuides\seating-specialevents\seating-specialevents.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\SeatingGuides\seating-suites\seating-suites.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\StaffSignUp\checklist-admin\checklist-admin.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\StaffSignUp\checklist-checklist\checklist-checklist.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\StaffSignUp\checklist-distribution\checklist-distribution.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\StaffSignUp\checklist-managers\checklist-managers.component.ts" />
+    <None Remove="ClientApp\src\app\Modules\StaffSignUp\checklist-review\checklist-review.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
@@ -25,6 +54,86 @@
 
   <ItemGroup>
     <None Include="wwwroot\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\EmployeeNotification\notification-distribution\notification-distribution.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\EmployeeNotification\notification-notification\notification-notification.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\EmployeeNotification\notification-admin\notification-admin.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\GateCountReporting\gatecount-gatecount\gatecount-gatecount.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\GateCountReporting\gatecount-stats\gatecount-stats.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\GateCountReporting\gatecount-review\gatecount-review.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\GateCountReporting\gatecount-distribution\gatecount-distribution.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\GateCountReporting\gatecount-interval\gatecount-interval.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\GateCountReporting\gatecount-admin\gatecount-admin.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\GateCountReporting\gatecount-studentcount\gatecount-studentcount.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\ManagerChecklist\checklist-managers\checklist-managers.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\ManagerChecklist\checklist-distribution\checklist-distribution.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\ManagerChecklist\checklist-review\checklist-review.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\ManagerChecklist\checklist-checklist\checklist-checklist.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\ManagerChecklist\checklist-admin\checklist-admin.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\SeatingGuides\seating-admin\seating-admin.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\SeatingGuides\seating-specialevents\seating-specialevents.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\SeatingGuides\seating-athletics\seating-athletics.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\SeatingGuides\seating-suites\seating-suites.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\SeatingGuides\seating-opensuites\seating-opensuites.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\SeatingGuides\seating-new\seating-new.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\StaffSignUp\checklist-admin\checklist-admin.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\StaffSignUp\checklist-checklist\checklist-checklist.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\StaffSignUp\checklist-distribution\checklist-distribution.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\StaffSignUp\checklist-managers\checklist-managers.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\Modules\StaffSignUp\checklist-review\checklist-review.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\app\Modules\EmployeeNotification\notification-distribution\notification-distribution.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ClientApp\src\app\Modules\ManagerChecklist\checklist-managers\checklist-managers.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ClientApp\src\app\Modules\ManagerChecklist\checklist-distribution\checklist-distribution.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ClientApp\src\app\Modules\ManagerChecklist\checklist-review\checklist-review.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
 
 </Project>

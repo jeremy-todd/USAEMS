@@ -16,7 +16,7 @@ export class UserServiceService {
 
   ngOnInit() { } 
 
-  private _url: string = "https://usaemstesting.azurewebsites.net/api/AppUsers";
+  private _url: string = "https://localhost:5001/api/AppUsers";
 
   //Get all Users
   getAll(): Observable<IUser[]> {

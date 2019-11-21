@@ -19,12 +19,35 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './Helpers/jwt.interceptor';
 import { ErrorInterceptor } from './Helpers/error.interceptor';
 import { AuthService } from './Services/Admin/auth-service.service';
+import { GateCountAdminComponent } from './Modules/GateCountReporting/gatecount-admin/gatecount-admin.component';
+import { GateCountDistributionComponent } from './Modules/GateCountReporting/gatecount-distribution/gatecount-distribution.component';
+import { GateCountGateCountComponent } from './Modules/GateCountReporting/gatecount-gatecount/gatecount-gatecount.component';
+import { GateCountIntervalComponent } from './Modules/GateCountReporting/gatecount-interval/gatecount-interval.component';
+import { GateCountReviewComponent } from './Modules/GateCountReporting/gatecount-review/gatecount-review.component';
+import { GateCountStatsComponent } from './Modules/GateCountReporting/gatecount-stats/gatecount-stats.component';
+import { GateCountStudentCountComponent } from './Modules/GateCountReporting/gatecount-studentcount/gatecount-studentcount.component';
+import { IncidentDistributionComponent } from './Modules/IncidentReporting/incident-distribution/incident-distribution.component';
+import { NotificationAdminComponent } from './Modules/EmployeeNotification/notification-admin/notification-admin.component';
+import { NotificationDistributionComponent } from './Modules/EmployeeNotification/notification-distribution/notification-distribution.component';
+import { NotificationNotificationComponent } from './Modules/EmployeeNotification/notification-notification/notification-notification.component';
+import { ChecklistAdminComponent } from './Modules/ManagerChecklist/checklist-admin/checklist-admin.component';
+import { ChecklistChecklistComponent } from './Modules/ManagerChecklist/checklist-checklist/checklist-checklist.component';
+import { ChecklistManagersComponent } from './Modules/ManagerChecklist/checklist-managers/checklist-managers.component';
+import { ChecklistDistributionComponent } from './Modules/ManagerChecklist/checklist-distribution/checklist-distribution.component';
+import { ChecklistReviewComponent } from './Modules/ManagerChecklist/checklist-review/checklist-review.component';
+import { SeatingAdminComponent } from './Modules/SeatingGuides/seating-admin/seating-admin.component';
+import { SeatingAthleticsComponent } from './Modules/SeatingGuides/seating-athletics/seating-athletics.component';
+import { SeatingNewComponent } from './Modules/SeatingGuides/seating-new/seating-new.component';
+import { SeatingOpenSuitesComponent } from './Modules/SeatingGuides/seating-opensuites/seating-opensuites.component';
+import { SeatingSpecialEventsComponent } from './Modules/SeatingGuides/seating-specialevents/seating-specialevents.component';
+import { SeatingSuitesComponent } from './Modules/SeatingGuides/seating-suites/seating-suites.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserProfileComponent,
     IncidentsAdminComponent,
+    IncidentDistributionComponent,
     IncidentReportComponent,
     IncidentReviewComponent,
     EventAdminComponent,
@@ -34,7 +57,28 @@ import { AuthService } from './Services/Admin/auth-service.service';
     HomeComponent,
     UserProfileComponent,
     MyProfileComponent,
-    LoginComponent
+    LoginComponent,
+    GateCountAdminComponent,
+    GateCountDistributionComponent,
+    GateCountGateCountComponent,
+    GateCountIntervalComponent,
+    GateCountReviewComponent,
+    GateCountStatsComponent,
+    GateCountStudentCountComponent,
+    NotificationAdminComponent,
+    NotificationDistributionComponent,
+    NotificationNotificationComponent,
+    ChecklistAdminComponent,
+    ChecklistChecklistComponent,
+    ChecklistManagersComponent,
+    ChecklistDistributionComponent,
+    ChecklistReviewComponent,
+    SeatingAdminComponent,
+    SeatingAthleticsComponent,
+    SeatingNewComponent,
+    SeatingOpenSuitesComponent,
+    SeatingSpecialEventsComponent,
+    SeatingSuitesComponent
   ],
   imports: [
     BrowserModule,
