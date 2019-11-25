@@ -49,12 +49,11 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          this.Router.navigate([this.returnUrl]);
+          this.Router.navigate(['/home']);
         },
         error => {
           this.error = error;
-          this.Router.navigate(['/login'], { queryParams: { error: true } });
-          console.log(error);
+          this.Router.navigate(['/aLogin'], { queryParams: { error: true } });          console.log(error);
         });
   }
 }

@@ -23,6 +23,7 @@ export class UserServiceService {
 
   //Add a User
   registerUser(newUser): Observable<IUser> {
+    console.log('registerUser reached. newUser = ' + newUser.fistName);
     return this.http.post<IUser>(this._url, newUser);
   }
 

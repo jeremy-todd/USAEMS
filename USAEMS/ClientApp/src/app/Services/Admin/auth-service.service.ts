@@ -26,7 +26,7 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.http
-      .post<any>("localhost:5001/api/auth/login", { email: email, password: password })
+      .post<any>("https://localhost:5001/api/auth/login", { email: email, password: password })
       .pipe(
         map(user => {
           console.log(user);

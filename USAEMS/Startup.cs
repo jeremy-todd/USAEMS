@@ -128,7 +128,7 @@ namespace USAEMS
             });
 
             //create admin user if it doesn't already exist
-            //SeedAdminUser(userManager, roleManager);
+            SeedAdminUser(userManager, roleManager);
         }
 
         private void SeedAdminUser(UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager)

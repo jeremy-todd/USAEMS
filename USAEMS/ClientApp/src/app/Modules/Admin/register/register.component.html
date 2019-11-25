@@ -1,19 +1,19 @@
 <div class="container">
-  <form id="userProfileGeneral">
+  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
     <div class="row">
       <div class="col">
         <label>First Name:</label>
-        <input type="text" id="firstName" class="form-control form-control-sm" placeholder="First name">
+        <input type="text" formControlName="firstName" class="form-control form-control-sm" placeholder="First name">
       </div>
       <div class="col">
         <label>Last Name:</label>
-        <input type="text" id="lastName" class="form-control form-control-sm" placeholder="Last name">
+        <input type="text" formControlName="lastName" class="form-control form-control-sm" placeholder="Last name">
       </div>
     </div>
     <div class="row">
       <div class="col">
         <label>Security Question:</label>
-        <select id="securityQuestion" class="form-control form-control-sm">
+        <select formControlName="securityQuestion" class="form-control form-control-sm">
           <option value="0">Select a security question...</option>
           <option value="1">What was your childhood nickname?</option>
           <option value="2">What is thw middle name of your oldest child?</option>
@@ -25,33 +25,33 @@
       </div>
       <div class="col">
         <label>Security Answer:</label>
-        <input type="text" id="securityAnswer" class="form-control form-control-sm" placeholder="Security question answer">
+        <input type="text" formControlName="securityAnswer" class="form-control form-control-sm" placeholder="Security question answer">
       </div>
     </div>
     <div class="row">
       <div class="col-12">
         <label>Email Address:</label>
-        <input type="email" id="email" class="form-control form-control-sm" placeholder="Email Address">
+        <input type="email" formControlName="email" class="form-control form-control-sm" placeholder="Email Address">
       </div>
     </div>
     <div class="row">
       <div class="col">
         <label>Password</label>
-        <input type="password" id="password" class="form-control form-control-sm">
+        <input type="password" formControlName="password" class="form-control form-control-sm">
       </div>
       <div class="col">
         <label>Retype Password</label>
-        <input type="password" id="passwordRetype" class="form-control form-control-sm">
+        <input type="password" formControlName="passwordRetype" class="form-control form-control-sm">
       </div>
     </div>
     <div class="row">
       <div class="col">
         <label>Cell Phone Number:</label>
-        <input type="tel" id="phone" class="form-control form-control-sm" placeholder="Cell Phone Number">
+        <input type="tel" formControlName="phone" class="form-control form-control-sm" placeholder="Cell Phone Number">
       </div>
       <div class="col">
         <label>Cell Phone Carrier:</label>
-        <select id="cellCarrier" class="form-control form-control-sm">
+        <select formControlName="cellCarrier" class="form-control form-control-sm">
           <option value="0">Select your cell phone carrier...</option>
           <option value="1">Alltell</option>
           <option value="2">AT&T</option>
@@ -73,7 +73,7 @@
     <div class="row">
       <div class="col-12">
         <label>Employer:</label>
-        <select id="employer" class="form-control form-control-sm">
+        <select formControlName="employer" class="form-control form-control-sm">
           <option value="0">Select your Employer...</option>
           <option value="1">Arena</option>
           <option value="2">KT Black Services</option>
@@ -87,7 +87,7 @@
     <div class="row">
       <div class="col">
         <label>Student:</label>
-        <select id="student" class="form-control form-control-sm">
+        <select formControlName="student" class="form-control form-control-sm">
           <option value="0">Student?</option>
           <option value="1">yes</option>
           <option value="2">no</option>
@@ -95,7 +95,7 @@
       </div>
       <div class="col">
         <label>Technical:</label>
-        <select id="technical" class="form-control form-control-sm">
+        <select formControlName="technical" class="form-control form-control-sm">
           <option value="0">Technical?</option>
           <option value="1">yes</option>
           <option value="2">no</option>
