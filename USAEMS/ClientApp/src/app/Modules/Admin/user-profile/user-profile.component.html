@@ -1,8 +1,8 @@
 <div class="container">
   <h3>User Management</h3>
   <br />
-  <form>
-    <select [(ngModel)]="userList" class="form-control form-control-sm">
+  <form [formGroup]="userProfileForm" (ngSubmit)="(onSubmit(userProfileForm.value))">
+    <select [(ngModel)]="userList" formControlName="User" class="form-control form-control-sm">
       <option id="0">Select User...</option>
       <option *ngFor="let user of users" value={{ userList.id }}>{{ userList.lastName }}, {{ userList.firstName }}</option>
     </select>
@@ -19,27 +19,27 @@
             <div class="row">
               <div class="col">
                 <label>First Name:</label>
-                <input type="text" id="firstName" class="form-control form-control-sm" placeholder="First name">
+                <input type="text" formControlName="firstName" class="form-control form-control-sm" placeholder="First name">
               </div>
               <div class="col">
                 <label>Last Name:</label>
-                <input type="text" id="lastName" class="form-control form-control-sm" placeholder="Last name">
+                <input type="text" formControlName="lastName" class="form-control form-control-sm" placeholder="Last name">
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <label>Email Address:</label>
-                <input type="email" id="email" class="form-control form-control-sm" placeholder="Email Address">
+                <input type="email" formControlName="email" class="form-control form-control-sm" placeholder="Email Address">
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <label>Cell Phone Number:</label>
-                <input type="tel" id="phone" class="form-control form-control-sm" placeholder="Cell Phone Number">
+                <input type="tel" formControlName="phone" class="form-control form-control-sm" placeholder="Cell Phone Number">
               </div>
               <div class="col">
                 <label>Cell Phone Carrier:</label>
-                <select id="cellCarrier" class="form-control form-control-sm">
+                <select formControlName="cellCarrier" class="form-control form-control-sm">
                   <option value="0">Select your cell phone carrier...</option>
                   <option value="1">Alltell</option>
                   <option value="2">AT&T</option>
@@ -61,7 +61,7 @@
             <div class="row">
               <div class="col">
                 <label>Employer:</label>
-                <select id="employer" class="form-control form-control-sm">
+                <select formControlName="employer" class="form-control form-control-sm">
                   <option value="0">Select Employer...</option>
                   <option value="1">Arena</option>
                   <option value="2">KT Black Services</option>
@@ -75,55 +75,55 @@
             <div class="row">
               <div class="col">
                 <label>Admin:</label>
-                <select id="admin" class="form-control form-control-sm">
-                  <option value="true">Yes</option>
-                  <option value="false" selected>No</option>
+                <select formControlName="admin" class="form-control form-control-sm">
+                  <option value="1">Yes</option>
+                  <option value="0" selected>No</option>
                   <option value="SuperAdmin">Super Admin</option>
                 </select>
               </div>
               <div class="col">
                 <label>Supervisor:</label>
-                <select id="supervisor" class="form-control form-control-sm">
-                  <option value="true">Yes</option>
-                  <option value="false" selected>No</option>
+                <select formControlName="supervisor" class="form-control form-control-sm">
+                  <option value="1">Yes</option>
+                  <option value="0" selected>No</option>
                 </select>
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <label>Student:</label>
-                <select id="student" class="form-control form-control-sm">
-                  <option value="true">Yes</option>
-                  <option value="false" selected>No</option>
+                <select formControlName="student" class="form-control form-control-sm">
+                  <option value="1">Yes</option>
+                  <option value="0" selected>No</option>
                 </select>
               </div>
               <div class="col">
                 <label>Technical:</label>
-                <select id="technical" class="form-control form-control-sm">
-                  <option value="true">Yes</option>
-                  <option value="false" selected>No</option>
+                <select formControlName="technical" class="form-control form-control-sm">
+                  <option value="1">Yes</option>
+                  <option value="0" selected>No</option>
                 </select>
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <label>Password:</label>
-                <input type="password" id="password" class="form-control form-control-sm">
+                <input type="password" formControlName="password" class="form-control form-control-sm">
               </div>
               <div class="col">
                 <label>Require Reset:</label>
-                <select id="reqReset" class="form-control form-control-sm">
-                  <option value="true">Yes</option>
-                  <option value="false" selected>No</option>
+                <select formControlName="reqReset" class="form-control form-control-sm">
+                  <option value="1">Yes</option>
+                  <option value="0" selected>No</option>
                 </select>
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <label>Active:</label>
-                <select id="active" class="form-control form-control-sm">
-                  <option value="true" selected>Yes</option>
-                  <option value="false">No</option>
+                <select formControlName="active" class="form-control form-control-sm">
+                  <option value="1" selected>Yes</option>
+                  <option value="0">No</option>
                 </select>
               </div>
             </div>

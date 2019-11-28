@@ -1,19 +1,19 @@
 <div class="container">
-  <form [formGroup]="myProfileForm">
+  <form [formGroup]="myProfileForm" (ngSubmit)="(onSubmit(myProfileForm.value))">
     <div class="row">
       <div class="col">
         <label>First Name:</label>
-        <input type="text" id="firstName" formControlName="firstName" class="form-control form-control-sm">
+        <input type="text" formControlName="firstName" class="form-control form-control-sm">
       </div>
       <div class="col">
         <label>Last Name:</label>
-        <input type="text" id="lastName" formControlName="lastName" class="form-control form-control-sm">
+        <input type="text" formControlName="lastName" class="form-control form-control-sm">
       </div>
     </div>
     <div class="row">
       <div class="col">
         <label>Security Question:</label>
-        <select id="securityQuestion" formControlName="securityQuestion" class="form-control form-control-sm">
+        <select formControlName="securityQuestion" class="form-control form-control-sm">
           <option value="0">Select a security question...</option>
           <option value="1">What was your childhood nickname?</option>
           <option value="2">What is the middle name of your oldest child?</option>
@@ -25,21 +25,21 @@
       </div>
       <div class="col">
         <label>Security Answer:</label>
-        <input type="text" id="securityAnswer" formControlName="securityAnswer" class="form-control form-control-sm">
+        <input type="text" formControlName="securityAnswer" class="form-control form-control-sm">
       </div>
     </div>
     <div class="form-group">
       <label>Email Address:</label>
-      <input type="email" id="email" formControlName="email" class="form-control form-control-sm">
+      <input type="email" formControlName="email" class="form-control form-control-sm">
     </div>
     <div class="row">
       <div class="col">
         <label>Cell Phone Number:</label>
-        <input type="tel" id="cellPhone" formControlName="cellPhone" class="form-control form-control-sm">
+        <input type="tel" formControlName="cellPhone" class="form-control form-control-sm">
       </div>
       <div class="col">
         <label>Cell Phone Carrier:</label>
-        <select id="cellCarrier" formControlName="cellCarrier" class="form-control form-control-sm">
+        <select formControlName="cellCarrier" class="form-control form-control-sm">
           <option value="0">Select your cell phone carrier...</option>
           <option value="2">Alltell</option>
           <option value="1">AT&T</option>
@@ -60,7 +60,7 @@
     </div>
     <div class="form-group">
       <label>Employer:</label>
-      <select id="employer" formControlName="employer" class="form-control form-control-sm" disabled>
+      <select formControlName="employer" class="form-control form-control-sm" disabled>
         <option value="0">Select your Employer...</option>
         <option value="1">Arena</option>
         <option value="2">KT Black Services</option>
@@ -73,7 +73,7 @@
     <div class="row">
       <div class="col">
         <label>Student:</label>
-        <select id="student" formControlName="student" class="form-control form-control-sm" disabled>
+        <select formControlName="student" class="form-control form-control-sm" disabled>
           <option value="0">Student?</option>
           <option value="true">Yes</option>
           <option value="false">No</option>
@@ -81,7 +81,7 @@
       </div>
       <div class="col">
         <label>Technical:</label>
-        <select id="student" formControlName="technical" class="form-control form-control-sm" disabled>
+        <select formControlName="technical" class="form-control form-control-sm" disabled>
           <option value="0">Technical?</option>
           <option value="true">Yes</option>
           <option value="false">No</option>

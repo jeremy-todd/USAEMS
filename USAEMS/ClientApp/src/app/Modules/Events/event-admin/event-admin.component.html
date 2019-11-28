@@ -1,14 +1,11 @@
 <div class="container">
   <h3>Events Management</h3>
   <p>Select an event to edit or New Event</p>
-  <form>
+  <form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm.value)">
     <select id="eventList" class="form-control form-control-sm">
       <option id="0">Select Event...</option>
       <option id="new">New Event</option>
-      <option id="1">Event 1</option>
-      <option id="2">Event 2</option>
-      <option id="3">Event 3</option>
-      <option id="4">Event 4</option>
+      <option *ngFor="let event of events" value={{ eventList.id }}>{{ eventList.eventName }}</option>
     </select>
     <br />
     <div class="row">
