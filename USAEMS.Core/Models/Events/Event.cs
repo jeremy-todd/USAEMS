@@ -16,7 +16,7 @@ namespace USAEMS.Core.Models
         [Required]
         public string EventName { get; set; }
         [Required]
-        public EventType EventType { get; set; }
+        public String EventType { get; set; }
         [Required]
         public DateTime EventDateTime { get; set; }
         public string EventDescription { get; set; }

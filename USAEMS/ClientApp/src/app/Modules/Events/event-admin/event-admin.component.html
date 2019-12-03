@@ -2,10 +2,10 @@
   <h3>Events Management</h3>
   <p>Select an event to edit or New Event</p>
   <form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm.value)">
-    <select id="eventList" [(ngModel)]="selectedValue" class="form-control form-control-sm">
-      <option id="0" selected>Select Event...</option>
-      <option id="new">New Event</option>
-      <option *ngFor="let event of eventList" [ngValue]="event.id">{{event.eventName}} ({{event.eventDateTime}})</option>
+    <label>Select Event...</label>
+    <select id="eventList" [(ngModel)]="selectedValue" class="form-control form-control-sm" (change)="onSelectEvent($event)">
+      <option id="0" value="new">New Event</option>
+      <option *ngFor="let event of eventList" [attr.value]="event.id">{{event.eventName}} ({{event.eventDateTime | date: 'MM/dd/yyyy' }})</option>
     </select>
     <br />
     <div class="row">
@@ -25,16 +25,17 @@
     <div class="row">
       <div class="col">
         <label>Event Date:</label>
-        <input type="date" id="eventDate" class="form-control form-control-sm">
+        <input type="date" id="eventDate" formControlName="eventDate" class="form-control form-control-sm">
       </div>
       <div class="col">
         <label>Event Time:</label>
-        <input type="time" id="eventTime" class="form-control form-control-sm">
+        <input type="time" id="eventTime" formControlName="eventTime" class="form-control form-control-sm">
       </div>
     </div>
     <div class="form-group">
       <label>Event Description:</label>
       <input type="text" id="eventDesc" formControlName="eventDesc" class="form-control form-control-sm">
+      <input type="hidden" formControlName="eventId" />
     </div>
     <br />
     <div class="btn-row">
