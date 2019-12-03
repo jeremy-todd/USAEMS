@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IEvent } from '../../../Interfaces/Events/ievent';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { EventServiceService } from '../../../Services/Events/event-service.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-event-admin',
@@ -9,14 +10,28 @@ import { EventServiceService } from '../../../Services/Events/event-service.serv
   styleUrls: ['./event-admin.component.scss']
 })
 export class EventAdminComponent implements OnInit {
-  eventForm: FormGroup;
-  eventList: IEvent[] = [];
+  private eventForm: FormGroup = new FormGroup({
+    eventName: new FormControl(''),
+    eventType: new FormControl(''),
+    eventDate: new FormControl(''),
+    eventTime: new FormControl(''),
+    eventDesc: new FormControl('')
+  });
 
-  constructor(private eventService: EventServiceService) { }
+  private eventList: IEvent[] = [];
+
+  constructor(private eventService: EventServiceService, private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.eventService.getAll().subscribe(data => (this.eventList = data));
-    console.log(this.eventList);
+    this.eventService.getAll().subscribe(data => {
+      data.forEach(event => {
+        event.eventDateTime = moment(event.eventDateTime).format('MM/DD/YYYY')
+        //TODO: Look into making this a filter
+        //TODO: Figure out how to populate the rest of the fields based on the selection using select change event.
+      });
+      this.eventList = data;
+      console.log(data);
+    });
   }
 
   onSubmit(eventFormData) {

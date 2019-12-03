@@ -1,9 +1,9 @@
 import { Time } from '@angular/common';
 
 export interface IEvent {
-  eventId: Number;
+  id: Number;
   eventName: String;
-  eventDate: Date;
-  eventTime: Time;
+  eventDateTime: string;
   eventType: String;
+  eventDescription: String;
 }

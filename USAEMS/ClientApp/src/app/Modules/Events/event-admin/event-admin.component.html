@@ -2,20 +2,20 @@
   <h3>Events Management</h3>
   <p>Select an event to edit or New Event</p>
   <form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm.value)">
-    <select id="eventList" class="form-control form-control-sm">
-      <option id="0">Select Event...</option>
+    <select id="eventList" [(ngModel)]="selectedValue" class="form-control form-control-sm">
+      <option id="0" selected>Select Event...</option>
       <option id="new">New Event</option>
-      <option *ngFor="let event of events" value={{ eventList.id }}>{{ eventList.eventName }}</option>
+      <option *ngFor="let event of eventList" [ngValue]="event.id">{{event.eventName}} ({{event.eventDateTime}})</option>
     </select>
     <br />
     <div class="row">
       <div class="col">
         <label>Event Name:</label>
-        <input type="text" id="eventName" formControlName="eventId" class="form-control form-control-sm">
+        <input type="text" id="eventName" formControlName="eventName" class="form-control form-control-sm">
       </div>
       <div class="col">
         <label>Event Type:</label>
-        <select id="eventName" formControlName="eventId" class="form-control form-control-sm">
+        <select id="eventType" formControlName="eventType" class="form-control form-control-sm">
           <option value="0">Event Type</option>
           <option value="athletics">Athletics</option>
           <option value="non-athletics">Non-Athletics</option>
@@ -25,11 +25,11 @@
     <div class="row">
       <div class="col">
         <label>Event Date:</label>
-        <input type="date" id="eventDate" formControlName="eventDate" class="form-control form-control-sm">
+        <input type="date" id="eventDate" class="form-control form-control-sm">
       </div>
       <div class="col">
         <label>Event Time:</label>
-        <input type="time" id="eventTime" formControlName="eventTime" class="form-control form-control-sm">
+        <input type="time" id="eventTime" class="form-control form-control-sm">
       </div>
     </div>
     <div class="form-group">
