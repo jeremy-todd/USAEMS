@@ -16,9 +16,9 @@ namespace USAEMS.Core.Models
         [Required]
         public string EventName { get; set; }
         [Required]
-        public String EventType { get; set; }
+        public string EventType { get; set; }
         [Required]
-        public DateTime EventDateTime { get; set; }
+        public string EventDateTime { get; set; }
         public string EventDescription { get; set; }
 
         //Events will have collections of Incidents and AppUsers (Workers) associated with them

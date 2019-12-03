@@ -24,9 +24,6 @@ export class EventAdminComponent implements OnInit {
 
   ngOnInit() {
     this.eventService.getAll().subscribe(data => {
-      data.forEach(event => {
-        //TODO: Look into making this a filter
-      });
       this.eventList = data;
       console.log(this.eventList);
     });
@@ -58,12 +55,29 @@ export class EventAdminComponent implements OnInit {
   onSubmit(eventFormData) {
     var event: IEvent;
 
-    console.log("Submitted", eventFormData);
+    const eventTime = eventFormData.eventTime + ':00.511';
+
+    //console.log("Submitted", eventFormData);
     if (eventFormData.eventId > 0) {
+      event = {
+        id: eventFormData.id,
+        eventName: eventFormData.eventName,
+        eventType: eventFormData.eventType,
+        eventDateTime: eventFormData.eventDate + 'T' + eventTime,
+        eventDescription: eventFormData.eventDesc
+      }
+      //console.log("event = " + event.eventDateTime);
       this.eventService.updateEvent(eventFormData);
       console.log("exisiting event");
     } else {
-      this.eventService.addEvent(eventFormData);
+      event = {
+        id: null,
+        eventName: eventFormData.eventName,
+        eventType: eventFormData.eventType,
+        eventDateTime: eventFormData.eventDate + 'T' + eventTime,
+        eventDescription: eventFormData.eventDesc
+      }
+      this.eventService.addEvent(event);
       console.log("new event");
     }
   }

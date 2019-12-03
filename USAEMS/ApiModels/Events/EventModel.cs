@@ -11,7 +11,7 @@ namespace USAEMS.ApiModels
         public int Id { get; set; }
         public string EventName { get; set; }
         public string EventType { get; set; }
-        public DateTime EventDateTime { get; set; }
+        public string EventDateTime { get; set; }
         public string EventDescription { get; set; }
     }
 }
