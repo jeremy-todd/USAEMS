@@ -19,6 +19,7 @@ export class EventAdminComponent implements OnInit {
   });
 
   private eventList: IEvent[] = [];
+  private eventId: Number;
 
   constructor(private eventService: EventServiceService, private fb: FormBuilder) { }
 
@@ -34,12 +35,14 @@ export class EventAdminComponent implements OnInit {
     var selectedEvent = this.eventList.find(e => e.id === selectedEventId);
     this.eventForm.controls['eventName'].patchValue(selectedEvent.eventName);
     this.eventForm.controls['eventType'].patchValue(selectedEvent.eventType);
-    console.log(this.formatDate(selectedEvent.eventDateTime));
+    console.log('eventType = ' + selectedEvent.eventType);
+    //console.log(this.formatDate(selectedEvent.eventDateTime));
     this.eventForm.controls['eventDate'].patchValue(this.formatDate(selectedEvent.eventDateTime));
     this.eventForm.controls['eventTime'].patchValue(this.formatTime(selectedEvent.eventDateTime));
-    console.log(this.formatTime(selectedEvent.eventDateTime));
+    //console.log(this.formatTime(selectedEvent.eventDateTime));
     this.eventForm.controls['eventDesc'].patchValue(selectedEvent.eventDescription);
-    this.eventForm.controls['eventId'].patchValue(selectedEvent.id);
+    this.eventId = selectedEvent.id;
+    console.log("this.eventId = " + this.eventId);
   }
 
   private formatDate(dateTime) {
@@ -56,18 +59,19 @@ export class EventAdminComponent implements OnInit {
     var event: IEvent;
 
     const eventTime = eventFormData.eventTime + ':00.511';
+    const dateTimeNow = Date.now();
 
     //console.log("Submitted", eventFormData);
-    if (eventFormData.eventId > 0) {
+    if (this.eventId > 0) {
       event = {
-        id: eventFormData.id,
+        id: this.eventId,
         eventName: eventFormData.eventName,
         eventType: eventFormData.eventType,
-        eventDateTime: eventFormData.eventDate + 'T' + eventTime,
+        eventDateTime: eventFormData.eventDate + ' ' + eventTime,
         eventDescription: eventFormData.eventDesc
       }
-      //console.log("event = " + event.eventDateTime);
-      this.eventService.updateEvent(eventFormData);
+      console.log("event.id = " + event.id);
+      this.eventService.updateEvent(event);
       console.log("exisiting event");
     } else {
       event = {
