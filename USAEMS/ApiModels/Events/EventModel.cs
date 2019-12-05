@@ -8,10 +8,10 @@ namespace USAEMS.ApiModels
 {
     public class EventModel
     {
-        public int Id { get; set; }
-        public string EventName { get; set; }
-        public string EventType { get; set; }
-        public string EventDateTime { get; set; }
-        public string EventDescription { get; set; }
+        public int id { get; set; }
+        public string eventName { get; set; }
+        public string eventType { get; set; }
+        public string eventDateTime { get; set; }
+        public string eventDescription { get; set; }
     }
 }

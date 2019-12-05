@@ -27,7 +27,7 @@ namespace USAEMS.Infrastructure.Data
             return _dbContext.Events
                 .Include(e => e.Incidents)
                 .Include(e => e.Workers)
-                .SingleOrDefault(e => e.Id == id);
+                .SingleOrDefault(e => e.id == id);
         }
 
         public Event Add(Event newEvent)
@@ -40,7 +40,7 @@ namespace USAEMS.Infrastructure.Data
         public Event Update(Event updatedEvent)
         {
             //get the Event object in the current list with this id
-            var exisitingEvent = _dbContext.Events.Find(updatedEvent.Id);
+            var exisitingEvent = _dbContext.Events.Find(updatedEvent.id);
 
             //return null if the Event to update is not found
             if (exisitingEvent == null) return null;

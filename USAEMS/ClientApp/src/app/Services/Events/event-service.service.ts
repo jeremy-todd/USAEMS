@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { IEvent } from '../../Interfaces/Events/ievent';
 import { Observable } from 'rxjs';
 
@@ -20,16 +20,15 @@ export class EventServiceService {
   }
 
   //Add an Event
-  addEvent(newEvent): Observable<IEvent> {
+  addEvent(newEvent: IEvent): Observable<IEvent> {
+    console.log('addEvent method reached.');
     return this.http.post<IEvent>(this._url, newEvent);
   }
 
   //Update an Event
-  updateEvent(updatedEvent): Observable<IEvent> {
-    console.log('updatedEvent funtion call reached!');
-    console.log
+  updateEvent(updatedEvent: IEvent): Observable<IEvent> {
+    console.log('updatedEvent method reached.');
     var urlPut: string = this._url + '/' + updatedEvent.id;
-    console.log("urlPut = " + urlPut);
     return this.http.put<IEvent>(urlPut, updatedEvent);
   }
 }

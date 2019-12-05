@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace USAEMS.Infrastructure.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class initialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,8 +28,8 @@ namespace USAEMS.Infrastructure.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     EventName = table.Column<string>(nullable: false),
-                    EventType = table.Column<int>(nullable: false),
-                    EventDateTime = table.Column<DateTime>(nullable: false),
+                    EventType = table.Column<string>(nullable: false),
+                    EventDateTime = table.Column<string>(nullable: false),
                     EventDescription = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

@@ -183,14 +183,16 @@ namespace USAEMS.Infrastructure.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("EventDateTime");
+                    b.Property<string>("EventDateTime")
+                        .IsRequired();
 
                     b.Property<string>("EventDescription");
 
                     b.Property<string>("EventName")
                         .IsRequired();
 
-                    b.Property<int>("EventType");
+                    b.Property<string>("EventType")
+                        .IsRequired();
 
                     b.HasKey("Id");
 

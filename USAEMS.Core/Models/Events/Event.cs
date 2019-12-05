@@ -12,14 +12,14 @@ namespace USAEMS.Core.Models
 
         }
         //All Events should have an Id, Name, and DateTime
-        public int Id { get; set; }
+        public int id { get; set; }
         [Required]
-        public string EventName { get; set; }
+        public string eventName { get; set; }
         [Required]
-        public string EventType { get; set; }
+        public string eventType { get; set; }
         [Required]
-        public string EventDateTime { get; set; }
-        public string EventDescription { get; set; }
+        public string eventDateTime { get; set; }
+        public string eventDescription { get; set; }
 
         //Events will have collections of Incidents and AppUsers (Workers) associated with them
         public ICollection<Incident> Incidents { get; set; }

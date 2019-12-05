@@ -9,8 +9,8 @@ using USAEMS.Infrastructure.Data;
 namespace USAEMS.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20191125023444_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20191204164908_initialCreate")]
+    partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -185,14 +185,16 @@ namespace USAEMS.Infrastructure.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("EventDateTime");
+                    b.Property<string>("EventDateTime")
+                        .IsRequired();
 
                     b.Property<string>("EventDescription");
 
                     b.Property<string>("EventName")
                         .IsRequired();
 
-                    b.Property<int>("EventType");
+                    b.Property<string>("EventType")
+                        .IsRequired();
 
                     b.HasKey("Id");
 

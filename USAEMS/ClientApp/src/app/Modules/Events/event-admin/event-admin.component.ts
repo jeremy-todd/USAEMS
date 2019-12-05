@@ -32,17 +32,29 @@ export class EventAdminComponent implements OnInit {
 
   onSelectEvent(event) {
     var selectedEventId = +event.target.value;
-    var selectedEvent = this.eventList.find(e => e.id === selectedEventId);
-    this.eventForm.controls['eventName'].patchValue(selectedEvent.eventName);
-    this.eventForm.controls['eventType'].patchValue(selectedEvent.eventType);
-    console.log('eventType = ' + selectedEvent.eventType);
-    //console.log(this.formatDate(selectedEvent.eventDateTime));
-    this.eventForm.controls['eventDate'].patchValue(this.formatDate(selectedEvent.eventDateTime));
-    this.eventForm.controls['eventTime'].patchValue(this.formatTime(selectedEvent.eventDateTime));
-    //console.log(this.formatTime(selectedEvent.eventDateTime));
-    this.eventForm.controls['eventDesc'].patchValue(selectedEvent.eventDescription);
-    this.eventId = selectedEvent.id;
-    console.log("this.eventId = " + this.eventId);
+    if (selectedEventId > 0) {
+      var selectedEvent = this.eventList.find(e => e.id === selectedEventId);
+      this.eventForm.controls['eventName'].patchValue(selectedEvent.eventName);
+      console.log('eventName = ' + selectedEvent.eventName);
+      this.eventForm.controls['eventType'].patchValue(selectedEvent.eventType);
+      console.log('eventType = ' + selectedEvent.eventType);
+      //console.log(this.formatDate(selectedEvent.eventDateTime));
+      this.eventForm.controls['eventDate'].patchValue(this.formatDate(selectedEvent.eventDateTime));
+      this.eventForm.controls['eventTime'].patchValue(this.formatTime(selectedEvent.eventDateTime));
+      //console.log(this.formatTime(selectedEvent.eventDateTime));
+      this.eventForm.controls['eventDesc'].patchValue(selectedEvent.eventDescription);
+      this.eventId = selectedEvent.id;
+      console.log("this.eventId = " + this.eventId);
+    } else {
+      this.eventForm.controls['eventName'].patchValue('');
+      this.eventForm.controls['eventType'].patchValue('');
+      this.eventForm.controls['eventDate'].patchValue('');
+      this.eventForm.controls['eventTime'].patchValue('');
+      this.eventForm.controls['eventDesc'].patchValue('');
+      this.eventId = selectedEvent.id;
+      console.log("this.eventId = " + this.eventId);
+    }
+    
   }
 
   private formatDate(dateTime) {

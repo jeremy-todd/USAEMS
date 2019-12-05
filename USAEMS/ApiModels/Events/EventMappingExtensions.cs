@@ -12,11 +12,11 @@ namespace USAEMS.ApiModels
         {
             return new EventModel
             {
-                Id = thisEvent.Id,
-                EventName = thisEvent.EventName,
-                EventType = thisEvent.EventType,
-                EventDateTime = thisEvent.EventDateTime,
-                EventDescription = thisEvent.EventDescription
+                id = thisEvent.id,
+                eventName = thisEvent.eventName,
+                eventType = thisEvent.eventType,
+                eventDateTime = thisEvent.eventDateTime,
+                eventDescription = thisEvent.eventDescription
             };
         }
 
@@ -24,11 +24,11 @@ namespace USAEMS.ApiModels
         {
             return new Event
             {
-                Id = eventModel.Id,
-                EventName = eventModel.EventName,
-                EventType = eventModel.EventType,
-                EventDateTime = eventModel.EventDateTime,
-                EventDescription = eventModel.EventDescription
+                id = eventModel.id,
+                eventName = eventModel.eventName,
+                eventType = eventModel.eventType,
+                eventDateTime = eventModel.eventDateTime,
+                eventDescription = eventModel.eventDescription
             };
         }
 

@@ -19,7 +19,6 @@ namespace USAEMS.Infrastructure.Data
         {
             optionsBuilder.UseSqlite("DataSource=../USAEMS.Infrastructure/usaems.db");
         }
-
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
