@@ -26,7 +26,7 @@ export class EventAdminComponent implements OnInit {
   ngOnInit() {
     this.eventService.getAll().subscribe(data => {
       this.eventList = data;
-      console.log(this.eventList);
+      //console.log(this.eventList);
     });
   }
 
@@ -35,16 +35,16 @@ export class EventAdminComponent implements OnInit {
     if (selectedEventId > 0) {
       var selectedEvent = this.eventList.find(e => e.id === selectedEventId);
       this.eventForm.controls['eventName'].patchValue(selectedEvent.eventName);
-      console.log('eventName = ' + selectedEvent.eventName);
+      //console.log('eventName = ' + selectedEvent.eventName);
       this.eventForm.controls['eventType'].patchValue(selectedEvent.eventType);
-      console.log('eventType = ' + selectedEvent.eventType);
+      //console.log('eventType = ' + selectedEvent.eventType);
       //console.log(this.formatDate(selectedEvent.eventDateTime));
       this.eventForm.controls['eventDate'].patchValue(this.formatDate(selectedEvent.eventDateTime));
       this.eventForm.controls['eventTime'].patchValue(this.formatTime(selectedEvent.eventDateTime));
       //console.log(this.formatTime(selectedEvent.eventDateTime));
       this.eventForm.controls['eventDesc'].patchValue(selectedEvent.eventDescription);
       this.eventId = selectedEvent.id;
-      console.log("this.eventId = " + this.eventId);
+      //console.log("this.eventId = " + this.eventId);
     } else {
       this.eventForm.controls['eventName'].patchValue('');
       this.eventForm.controls['eventType'].patchValue('');
@@ -52,7 +52,7 @@ export class EventAdminComponent implements OnInit {
       this.eventForm.controls['eventTime'].patchValue('');
       this.eventForm.controls['eventDesc'].patchValue('');
       this.eventId = selectedEvent.id;
-      console.log("this.eventId = " + this.eventId);
+      //console.log("this.eventId = " + this.eventId);
     }
     
   }
@@ -69,9 +69,11 @@ export class EventAdminComponent implements OnInit {
 
   onSubmit(eventFormData) {
     var event: IEvent;
+    console.log('eventFormData:');
+    console.log(eventFormData);
 
-    const eventTime = eventFormData.eventTime + ':00.511';
-    const dateTimeNow = Date.now();
+    const eventTime = eventFormData.eventTime + ':00';
+    //const dateTimeNow = Date.now();
 
     //console.log("Submitted", eventFormData);
     if (this.eventId > 0) {
@@ -82,19 +84,23 @@ export class EventAdminComponent implements OnInit {
         eventDateTime: eventFormData.eventDate + ' ' + eventTime,
         eventDescription: eventFormData.eventDesc
       }
-      console.log("event.id = " + event.id);
-      this.eventService.updateEvent(event);
+      //console.log("event.id = " + event.id);
+      console.log('event:');
+      console.log(event);
       console.log("exisiting event");
+      return this.eventService.updateEvent(event);
     } else {
       event = {
         id: null,
         eventName: eventFormData.eventName,
         eventType: eventFormData.eventType,
-        eventDateTime: eventFormData.eventDate + 'T' + eventTime,
+        eventDateTime: eventFormData.eventDate + ' ' + eventTime,
         eventDescription: eventFormData.eventDesc
       }
-      this.eventService.addEvent(event);
+      console.log('event:');
+      console.log(event);
       console.log("new event");
+      return this.eventService.addEvent(event);
     }
   }
 

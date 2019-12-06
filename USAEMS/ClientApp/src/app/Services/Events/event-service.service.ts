@@ -28,7 +28,11 @@ export class EventServiceService {
   //Update an Event
   updateEvent(updatedEvent: IEvent): Observable<IEvent> {
     console.log('updatedEvent method reached.');
+    console.log('updatedEvent:');
+    console.log(updatedEvent);
+    let body = JSON.stringify(updatedEvent);
     var urlPut: string = this._url + '/' + updatedEvent.id;
-    return this.http.put<IEvent>(urlPut, updatedEvent);
+    console.log('urlPut = ' + urlPut);
+    return this.http.put<IEvent>(urlPut, body);
   }
 }
