@@ -2,21 +2,15 @@
   <h3>Incident Reporting System</h3>
   <p>Select an incident to edit or New Incident</p>
   <form [formGroup]="incidentReport">
-    <select id="incidentList" class="form-control form-control-sm">
-      <option id="0">Select Incident...</option>
-      <option id="new">New Incident</option>
-      <option id="1">Incident 1</option>
-      <option id="2">Incident 2</option>
-      <option id="3">Incident 3</option>
-      <option id="4">Incident 4</option>
+    <select id="incidentList" [(ngModel)]="selectedValue" class="form-control form-control-sm" (change)="onSelectIncident($incident)">
+      <option id="0" value="new">New Incident</option>
+      <option *ngFor="let incident of incidentList" [attr.value]="incident.id">{{incident.event}}</option>
     </select>
     <div class="row">
       <div class="col">
         <label>Event:</label>
-        <select id="event" formControlName="eventId" class="form-control form-control-sm">
-          <option value="0">Select an Event</option>
-          <option value="1">MBB v. Eastern Illinois</option>
-          <option value="2">WBB v. Abilene Christian</option>
+        <select id="eventList" [(ngModel)]="selectedValue" class="form-control form-control-sm" (change)="onSelectEvent($event)">
+          <option *ngFor="let event of eventList" [attr.value]="event.id">{{event.eventName}} ({{event.eventDateTime | date: 'MM/dd/yyyy' }})</option>
         </select>
       </div>
       <div class="col">
@@ -77,7 +71,7 @@
     <div class="row">
       <div class="col">
         <label>Date of Birth:</label>
-        <input type="dateOfBirth" id="date" formControlName="dateofBirth" class="form-control form-control-sm">
+        <input type="date" id="date" formControlName="dateofBirth" class="form-control form-control-sm">
       </div>
       <div class="col">
         <label>Email Address:</label>
