@@ -1,7 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { IEvent } from '../../Interfaces/Events/ievent';
 import { Observable } from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'my-auth-token'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +29,7 @@ export class EventServiceService {
   //Add an Event
   addEvent(newEvent: IEvent): Observable<IEvent> {
     console.log('addEvent method reached.');
-    return this.http.post<IEvent>(this._url, newEvent);
+    return this.http.post<IEvent>(this._url, newEvent, httpOptions).subscribe((_x) => {} );
   }
 
   //Update an Event
@@ -33,6 +40,6 @@ export class EventServiceService {
     let body = JSON.stringify(updatedEvent);
     var urlPut: string = this._url + '/' + updatedEvent.id;
     console.log('urlPut = ' + urlPut);
-    return this.http.put<IEvent>(urlPut, body);
+    return this.http.put<IEvent>(urlPut, body, httpOptions).subscribe((_x) => { });
   }
 }

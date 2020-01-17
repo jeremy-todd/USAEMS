@@ -74,7 +74,7 @@ export class EventAdminComponent implements OnInit {
 
     const eventTime = eventFormData.eventTime + ':00';
     //const dateTimeNow = Date.now();
-
+    debugger
     //console.log("Submitted", eventFormData);
     if (this.eventId > 0) {
       event = {
@@ -85,20 +85,18 @@ export class EventAdminComponent implements OnInit {
         eventDescription: eventFormData.eventDesc
       }
       //console.log("event.id = " + event.id);
-      console.log('event:');
-      console.log(event);
+      console.log('event:', event);
       console.log("exisiting event");
       return this.eventService.updateEvent(event);
     } else {
       event = {
-        id: null,
+        //id: null,
         eventName: eventFormData.eventName,
         eventType: eventFormData.eventType,
         eventDateTime: eventFormData.eventDate + ' ' + eventTime,
         eventDescription: eventFormData.eventDesc
       }
-      console.log('event:');
-      console.log(event);
+      console.log('event:', event);
       console.log("new event");
       return this.eventService.addEvent(event);
     }

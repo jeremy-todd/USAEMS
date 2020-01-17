@@ -13,7 +13,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class IncidentReportComponent implements OnInit {
 
   private incidentForm: FormGroup = new FormGroup({
-    date: new FormControl(''),
+    incidentEvent: new FormControl(''),
+    incidentDate: new FormControl(''),
     location: new FormControl(''),
     incidentTime: new FormControl(''),
     firstName: new FormControl(''),
@@ -36,16 +37,17 @@ export class IncidentReportComponent implements OnInit {
   private eventId: Number;
 
   constructor(private IncidentService: IncidentServiceService, private EventService: EventServiceService) { }
-
+  
   ngOnInit() {
-    this.IncidentService.getAll().subscribe(data => {
-      this.incidentList = data;
-      console.log(this.incidentList)
-    });
-
+    //debugger
     this.EventService.getAll().subscribe(data => {
       this.eventList = data;
       console.log(this.eventList);
+    });
+
+    this.IncidentService.getAll().subscribe(data => {
+      this.incidentList = data;
+      console.log(this.incidentList)
     });
   }
 
@@ -63,7 +65,7 @@ export class IncidentReportComponent implements OnInit {
 
   }
 
-  onSelectIncident(incident) {
+  /*onSelectIncident(incident) {
     var selectedIncidentId = +event.target.value;
     if (selectedIncidentId > 0) {
       var selectedIncident = this.eventList.find(e => e.id === selectedIncidentId);
@@ -73,6 +75,6 @@ export class IncidentReportComponent implements OnInit {
       this.incidentId = selectedIncident.id;
     }
 
-  }
+  }*/
 
 }
