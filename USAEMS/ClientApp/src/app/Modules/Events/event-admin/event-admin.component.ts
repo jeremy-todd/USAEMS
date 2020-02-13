@@ -74,7 +74,7 @@ export class EventAdminComponent implements OnInit {
 
     const eventTime = eventFormData.eventTime + ':00';
     //const dateTimeNow = Date.now();
-    debugger
+    //debugger
     //console.log("Submitted", eventFormData);
     if (this.eventId > 0) {
       event = {

@@ -5,6 +5,7 @@ export interface IIncident {
   Id: Number;
   event: Event;
   location: String;
+  date: Time;
   time: Time;
   firstName: String;
   lastName: String;

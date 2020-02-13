@@ -40,14 +40,14 @@ export class IncidentReportComponent implements OnInit {
   
   ngOnInit() {
     //debugger
-    this.EventService.getAll().subscribe(data => {
-      this.eventList = data;
-      console.log(this.eventList);
+    this.IncidentService.getAll().subscribe(dataIncidents => {
+      this.incidentList = dataIncidents;
+      console.log(this.incidentList)
     });
 
-    this.IncidentService.getAll().subscribe(data => {
-      this.incidentList = data;
-      console.log(this.incidentList)
+    this.EventService.getAll().subscribe(dataEvents => {
+      this.eventList = dataEvents;
+      console.log(this.eventList);
     });
   }
 

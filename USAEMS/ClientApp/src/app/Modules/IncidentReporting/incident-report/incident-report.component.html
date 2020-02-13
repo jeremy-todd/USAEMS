@@ -1,10 +1,10 @@
 <div class="container">
   <h3>Incident Reporting System</h3>
   <p>Select an incident to edit or New Incident</p>
-  <form [formGroup]="incidentReport">
+  <form [formGroup]="incidentForm">
     <select id="incidentList" [(ngModel)]="selectedValue" class="form-control form-control-sm" (change)="onSelectIncident($incident)">
       <option id="0" value="new">New Incident</option>
-      <option *ngFor="let incident of incidentList" [attr.value]="incident.id">{{incident.id}}</option>
+      <option *ngFor="let incident of incidentList" [attr.value]="incident.id">{{incident.incidentEventId}} (date)</option>
     </select>
     <div class="row">
       <div class="col">
