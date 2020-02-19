@@ -15,10 +15,13 @@ namespace USAEMS.Controllers
     public class IncidentsController : Controller
     {
         private readonly IIncidentService _incidentService;
+        private readonly IEventService _eventService;
 
-        public IncidentsController(IIncidentService incidentService)
+
+        public IncidentsController(IIncidentService incidentService, IEventService eventService)
         {
             _incidentService = incidentService;
+            _eventService = eventService;
         }
 
         // GET api/incidents
@@ -27,10 +30,21 @@ namespace USAEMS.Controllers
         {
             try
             {
+                //to return all events
+                var allEvents = _eventService
+                    .GetAll()
+                    .ToApiModels();
+
                 // to return all incidents
                 var allIncidents = _incidentService
                     .GetAll()
                     .ToApiModels();
+
+                foreach (var incident in allIncidents)
+                {
+                    var theevent = allEvents.Where(e => e.id == incident.IncidentEventId).FirstOrDefault();
+                    incident.IncidentEvent = theevent;
+                }
                 return Ok(allIncidents);
 
             }

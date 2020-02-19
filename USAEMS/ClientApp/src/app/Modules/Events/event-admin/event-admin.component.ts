@@ -90,7 +90,7 @@ export class EventAdminComponent implements OnInit {
       return this.eventService.updateEvent(event);
     } else {
       event = {
-        //id: null,
+        id: null,
         eventName: eventFormData.eventName,
         eventType: eventFormData.eventType,
         eventDateTime: eventFormData.eventDate + ' ' + eventTime,

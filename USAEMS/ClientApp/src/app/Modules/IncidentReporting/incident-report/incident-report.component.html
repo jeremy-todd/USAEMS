@@ -4,12 +4,13 @@
   <form [formGroup]="incidentForm">
     <select id="incidentList" [(ngModel)]="selectedValue" class="form-control form-control-sm" (change)="onSelectIncident($incident)">
       <option id="0" value="new">New Incident</option>
-      <option *ngFor="let incident of incidentList" [attr.value]="incident.id">{{incident.incidentEventId}} (date)</option>
+      <option *ngFor="let incident of incidentList" [attr.value]="incident.id">{{incident.event.eventName}} ({{incident.event.eventDateTime | date: 'MM/dd/yyyy'}})</option>
     </select>
     <div class="row">
       <div class="col">
         <label>Event:</label>
         <select id="eventList" [(ngModel)]="selectedValue" class="form-control form-control-sm" (change)="onSelectEvent($event)">
+          <option value=0>Select Event...</option>
           <option *ngFor="let event of eventList" [attr.value]="event.id">{{event.eventName}} ({{event.eventDateTime | date: 'MM/dd/yyyy' }})</option>
         </select>
       </div>

@@ -7,7 +7,8 @@ namespace USAEMS.Core.Models
     public class Incident
     {
         public int Id { get; set; }
-        public string IncidentEventId { get; set; }
+        public int IncidentEventId { get; set; }
+        public Event IncidentEvent { get; set; }
         public string IncidentLocation { get; set; }
         public DateTime IncidentTime { get; set; }
         public string PatronFirstName { get; set; }
